@@ -50,7 +50,7 @@ const vApp = {
     if (!msg == "") {
       var message = {
         user: signedUser.nick,
-        message: msg,
+        message: msg.replace(/<\/?[^>]+(>|$)/g, ""),
         date: new Date()
       }
       socket.emit('new-message', message);
@@ -85,7 +85,7 @@ const templates = {
       msg_altr = (messages[index].user == signedUser.nick)? 'me': 'you';
       return (
         `<div class="msg ${msg_altr}">
-          <strong>${msg.user}</strong>:<em>${msg.message}</em>
+          <strong>${msg.user}</strong>: <em>${msg.message}</em>
         </div>`
       )
     }).join("");
