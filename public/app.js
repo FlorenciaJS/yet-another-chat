@@ -56,6 +56,7 @@ const vApp = {
       socket.emit('new-message', message);
       msg_input.value = "";
     }
+    msg_input.focus(); // Autofocus after sending message
   },
 
   render: (template, selector) => {
