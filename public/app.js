@@ -10,7 +10,7 @@ const vApp = {
         
     //On Arrive a new User
     socket.on('users', (users) => {
-      console.log(users);
+      vApp.render(templates.userList(users), document.querySelector('.users'));
     })
   },
 
@@ -34,6 +34,22 @@ const vApp = {
     if (!selector) return;
     selector.innerHTML = template;
   }
+
+}
+
+const templates = {
+
+  userList: (users) => {
+   return users.map((user) => {
+      return (
+        `<li class="user">
+          <img src="">
+          <span class="name">${user.nick}</span>
+          <span class="status">${user.status}</span>
+        </li>`
+      );
+    }).join("");
+  },
 
 }
 

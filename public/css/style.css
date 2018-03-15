@@ -68,6 +68,49 @@ body {
   font-size: x-large;
 }
 
+
+.container .left .users {
+  border-right: 1px solid #e6e6e6;
+  width: -o-calc(100% + 1px);
+  width: calc(100% + 1px);
+  height: calc(85%);
+  overflow-y: auto;
+}
+
+.container .left .users .user {
+  position: relative;
+  width: 100%;
+  padding: 12px 10% 16px;
+  background-color: #fff;
+  display: inline-block;
+}
+
+.container .left .users .user img {
+  float: left;
+  width: 45px;
+  height: 45px;
+  margin-right: 12px;
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: #62bf6e;
+}
+
+.container .left .users .user .name {
+  font-size: 14px;
+  line-height: 22px;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.container .left .users .user .status {
+  font-size: 14px;
+  display: inline-block;
+  overflow: hidden !important;
+  width: 65%;
+  white-space: nowrap;
+  color: #999;
+}
+
 .container .right {
   position: relative;
   float: left;
