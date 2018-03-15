@@ -12,6 +12,17 @@ const vApp = {
     socket.on('users', (users) => {
       vApp.render(templates.userList(users), document.querySelector('.users'));
     })
+    
+    //Listen for send message event
+    document.querySelector('#writer').addEventListener('submit', ()=> {
+      vApp.sendMessage()
+    })
+
+    //On Arrive a new Message
+    socket.on('messages', (messages) => {
+      console.log(messages);
+    })
+
   },
 
   login: (nick) => {
@@ -29,6 +40,20 @@ const vApp = {
       query:"username="+signedUser.nick+"&avatar="+signedUser.avatar,
       'forceNew': true,
     });
+  },
+
+  sendMessage: () => {
+    let msg_input = document.getElementById('message');
+    let msg = msg_input.value;
+    if (!msg == "") {
+      var message = {
+        user: signedUser.nick,
+        message: msg,
+        date: new Date()
+      }
+      socket.emit('new-message', message);
+      msg_input.value = "";
+    }
   },
 
   render: (template, selector) => {

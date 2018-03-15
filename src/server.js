@@ -6,6 +6,7 @@ let chat = io.of('/chat')
 let port = process.env.PORT || 3000;
 
 let userList = [];
+let messages = [];
 
 app.use(express.static(__dirname + '/../public'));
 
@@ -23,6 +24,13 @@ chat.on('connection', (socket) => {
     })
   }
   chat.emit('users', userList);
+  chat.emit('messages', messages);
+
+  //On Arrive nwew message
+  socket.on('new-message', (msg) => {
+    messages.push(msg);
+    chat.emit('messages', messages);
+  })
 
   //User SignOut
   socket.on('disconnect', () => {
