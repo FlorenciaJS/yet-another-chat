@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/FlorenciaJS/yet-another-chat#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "socket.io": "^2.0.4"
   }
 }
