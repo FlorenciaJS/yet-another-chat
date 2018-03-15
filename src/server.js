@@ -18,6 +18,7 @@ chat.on('connection', (socket) => {
     userList.push({
       id: socket.id,
       nick: signedUser.username,
+      avatar: `data:image/png;base64,${signedUser.avatar}`,
       status: 'online'
     })
   }
