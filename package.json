@@ -1,0 +1,28 @@
+{
+  "name": "yac",
+  "version": "1.0.0",
+  "description": "yet-another-chat",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlorenciaJS/yet-another-chat.git"
+  },
+  "keywords": [
+    "chat",
+    "socketio",
+    "nodejs",
+    "vanilla"
+  ],
+  "author": "Cristiam Diaz <c.diaz@udla.edu.co>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FlorenciaJS/yet-another-chat/issues"
+  },
+  "homepage": "https://github.com/FlorenciaJS/yet-another-chat#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
