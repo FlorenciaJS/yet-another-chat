@@ -21,6 +21,8 @@ const vApp = {
     //On Arrive a new Message
     socket.on('messages', (messages) => {
       vApp.render(templates.messages(messages), document.querySelector('#messages'));
+      let chat_box = document.querySelector('.chat');
+      chat_box.scrollTop = chat_box.scrollHeight; // Auto scroll down
     })
 
   },
