@@ -125,6 +125,96 @@ body {
   background-color: #eceff1;
 }
 
+
+.container .right .chat {
+  display: block;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0 35px 12px;
+  border-width: 1px 1px 0 0;
+  border-style: solid;
+  border-color: #e6e6e6;
+  height: -o-calc(100% - 48px);
+  height: calc(85% - 48px);
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.container .right .conversation-start {
+  position: relative;
+  width: 100%;
+  margin-bottom: 27px;
+  text-align: center;
+}
+
+.container .right .conversation-start span {
+  font-size: 14px;
+  display: inline-block;
+  color: #999;
+}
+
+.container .right .msg {
+  font-size: 16px;
+  position: relative;
+  display: inline-block;
+  clear: both;
+  margin-bottom: 8px;
+  padding: 13px 14px;
+  vertical-align: top;
+  border-radius: 5px;
+}
+
+.container .right .msg strong {
+  font-weight: bold;
+}
+
+.container .right .msg:before {
+  position: absolute;
+  top: 19px;
+  display: block;
+  width: 8px;
+  height: 6px;
+  content: '\00a0';
+  -webkit-transform: rotate(29deg) skew(-35deg);
+  transform: rotate(29deg) skew(-35deg);
+}
+
+.container .right .msg.me {
+  float: left;
+  color: #fff;
+  background-color: #1D976C;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+.container .right .msg.me:before {
+  left: -3px;
+  background-color: #1D976C;
+}
+
+.container .right .msg.you {
+  float: right;
+  color: #1a1a1a;
+  background-color: #eceff1;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-animation-name: slideFromRight;
+  animation-name: slideFromRight;
+}
+
+.container .right .msg.you:before {
+  right: -3px;
+  background-color: #eceff1;
+}
+
 .container .right .write {
   position: absolute;
   bottom: 29px;

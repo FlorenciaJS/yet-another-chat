@@ -20,7 +20,7 @@ const vApp = {
 
     //On Arrive a new Message
     socket.on('messages', (messages) => {
-      console.log(messages);
+      vApp.render(templates.messages(messages), document.querySelector('#messages'));
     })
 
   },
@@ -76,6 +76,17 @@ const templates = {
       );
     }).join("");
   },
+
+  messages: (messages) => {
+    return messages.map((msg, index) => {
+      msg_altr = (messages[index].user == signedUser.nick)? 'me': 'you';
+      return (
+        `<div class="msg ${msg_altr}">
+          <strong>${msg.user}</strong>:<em>${msg.message}</em>
+        </div>`
+      )
+    }).join("");
+  }
 
 }
 
