@@ -1,16 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Yet Another Chat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/reset.min.css">
   <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 </head>
 
 <body>
-  <header id="brand"></header>
+  <div class="wrapper">
+    <div class="container">
+      <div class="left">
+        <div class="top">
+          <div id="brand"></div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="top"></div>
+        <div class="chat"></div>
+        <div class="write">
+          <form onsubmit="">
+            <input id="message" type="text" autocomplete="off" placeholder="Type Here.." />
+            <button class="write-link">
+              <img class="send" src="img/send.svg" width="25" height="25" />
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="app.js"></script>
 </body>
 
