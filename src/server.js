@@ -8,7 +8,9 @@ let port = process.env.PORT || 3000;
 let userList = [];
 let messages = [];
 
-app.use(express.static(__dirname + '/../public'));
+if (process.env.NODE_ENV === 'development'){
+  app.use(express.static(__dirname + '/client'));
+}
 
 chat.on('connection', (socket) => {
 

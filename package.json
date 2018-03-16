@@ -4,7 +4,7 @@
   "description": "yet-another-chat",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "NODE_ENV=development node ./src/server.js"
   },
   "repository": {
     "type": "git",
