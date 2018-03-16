@@ -7,7 +7,8 @@ const vApp = {
     vApp.render("<h1>Yet Another Chat!</h1>", document.querySelector('#brand'));
     vApp.login((Math.random() + 1).toString(29).slice(2, 9));
     vApp.socket_connect();
-        
+    vApp.render(signedUser.nick, document.querySelector('#userInfo')); 
+    
     //On Arrive a new User
     socket.on('users', (users) => {
       vApp.render(templates.userList(users), document.querySelector('.users'));

@@ -125,6 +125,18 @@ body {
   background-color: #eceff1;
 }
 
+.container .right .top {
+  width: 100%;
+  padding: 18px 29px;
+  background-color: #eceff1;
+}
+
+.container .right .top #userInfo {
+  color: rgb(26, 26, 26);
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
 
 .container .right .chat {
   display: block;
