@@ -242,8 +242,7 @@ body {
   font-weight: 400;
 }
 
-.container .right .write .write-link.send input[type="button"],  
-button, button:active, button::-moz-focus-inner {
+.container .right .write .write-link.send input[type="button"], button, button:active {
   background:none!important;
   color:inherit;
   border:none; 
@@ -254,3 +253,8 @@ button, button:active, button::-moz-focus-inner {
   height: 40px;
   line-height: 0px
 }
+
+.container .right .write button::-moz-focus-inner, input[type="submit"]::-moz-focus-inner,select::-moz-focus-inner {
+    border: 0;
+    outline : 0;
+} 
