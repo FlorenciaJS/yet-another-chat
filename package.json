@@ -2,9 +2,13 @@
   "name": "yac",
   "version": "1.0.0",
   "description": "yet-another-chat",
-  "main": "src/server.js",
   "scripts": {
-    "start": "NODE_ENV=development node ./src/server.js"
+    "start:prod": "npm run build && NODE_ENV=production npm run server",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "server": "node ./src/server"
   },
   "repository": {
     "type": "git",
@@ -14,16 +18,30 @@
     "chat",
     "socketio",
     "nodejs",
-    "vanilla"
+    "react",
+    "redux"
   ],
-  "author": "Cristiam Diaz <c.diaz@udla.edu.co>",
+  "authors": [
+    {
+      "name": "Cristiam Diaz",
+      "email": "c.diaz@udla.edu.co",
+      "url": ""
+    },
+    {
+      "name": "Juan David",
+      "email": "e.juandav@gmail.com",
+      "url": "https://juandav.github.io/"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/FlorenciaJS/yet-another-chat/issues"
   },
-  "homepage": "https://github.com/FlorenciaJS/yet-another-chat#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1",
     "socket.io": "^2.0.4"
   }
 }

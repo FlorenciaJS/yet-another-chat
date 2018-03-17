@@ -8,8 +8,9 @@ let port = process.env.PORT || 3000;
 let userList = [];
 let messages = [];
 
-if (process.env.NODE_ENV === 'development'){
-  app.use(express.static(__dirname + '/client'));
+if (process.env.NODE_ENV === 'production'){
+  const rootDir = process.cwd();
+  app.use(express.static(rootDir + '/build'));
 }
 
 chat.on('connection', (socket) => {
