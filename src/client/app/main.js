@@ -1,3 +1,6 @@
+const utils = require('./utils');
+const templates = require('./templates');
+
 let signedUser = null;
 let socket = null;
 
@@ -21,7 +24,7 @@ const vApp = {
 
     //On Arrive a new Message
     socket.on('messages', (messages) => {
-      vApp.render(templates.messages(messages), document.querySelector('#messages'));
+      vApp.render(templates.messages(messages, signedUser), document.querySelector('#messages'));
       let chat_box = document.querySelector('.chat');
       chat_box.scrollTop = chat_box.scrollHeight; // Auto scroll down
     })
@@ -39,7 +42,7 @@ const vApp = {
   },
 
   socket_connect: () => {
-    socket = io.connect('http://localhost:3000/chat', {
+    socket = io.connect(`${SERVER_URL}/chat`, {
       query:"username="+signedUser.nick+"&avatar="+signedUser.avatar,
       'forceNew': true,
     });

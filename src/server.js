@@ -3,14 +3,13 @@ let app = express();
 let server = require('http').Server(app);
 let io = require('socket.io')(server);
 let chat = io.of('/chat')
-let port = process.env.PORT || 3000;
+let url = require('url');
+require('dotenv').config()
+
+let port = url.parse(process.env.SERVER_URL).port;
 
 let userList = [];
 let messages = [];
-
-if (process.env.NODE_ENV === 'development'){
-  app.use(express.static(__dirname + '/client'));
-}
 
 chat.on('connection', (socket) => {
 

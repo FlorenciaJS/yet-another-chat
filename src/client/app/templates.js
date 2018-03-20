@@ -1,4 +1,4 @@
-const templates = {
+module.exports = {
 
   userList: (users) => {
     return users.map((user) => {
@@ -12,7 +12,7 @@ const templates = {
     }).join("");
   },
 
-  messages: (messages) => {
+  messages: (messages, signedUser) => {
     return messages.map((msg, index) => {
       msg_altr = (messages[index].user == signedUser.nick) ? 'me' : 'you';
       return (

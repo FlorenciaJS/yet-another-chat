@@ -1,5 +1,4 @@
-
-const utils = {
+module.exports  = {
 
   avatarGenerator: () => {
     var x;
